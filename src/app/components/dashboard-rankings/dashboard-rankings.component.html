@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<div class="matchTypeHeading">
+    <h3 class="matchType">Rankings</h3>
+    <select class="dropdown" id="Rankings" (change)="onRankingChange($event)">
+        <option class="dropdown-content" value="test">Test Rankings</option>
+        <option class="dropdown-content" value="odi">ODI Rankings</option>
+        <option class="dropdown-content" value="t20">T20 Rankings</option>
+    </select>
+</div>
+<section class="hero-section">
+    <div class="card-grid">
+        <div (click)="openModal('teams')" class="card">
+            <div class="card__background" style="background-image: url({{teamImage}})"></div>
+            <div class="card__content" >
+                <p class="card__category">ICC {{formatType}} Ranking</p>
+                <h3 class="card__heading">Team</h3>
+            </div>
+        </div>
+        <div (click)="openModal('batsmen')" class="card">
+            <div class="card__background" style="background-image: url({{battingImage}})"></div>
+            <div class="card__content">
+                <p class="card__category">ICC {{formatType}} Ranking</p>
+                <h3 class="card__heading">Batting</h3>
+            </div>
+        </div>
+        <div (click)="openModal('bowlers')" class="card">
+            <div class="card__background" style="background-image: url({{bowlingImage}})"></div>
+            <div class="card__content">
+                <p class="card__category">ICC {{formatType}} Ranking</p>
+                <h3 class="card__heading">Bowling</h3>
+            </div>
+        </div>
+        <div (click)="openModal('allrounders')" class="card">
+            <div class="card__background" style="background-image: url({{allRoundImage}})"></div>
+            <div class="card__content">
+                <p class="card__category">ICC {{formatType}} Ranking</p>
+                <h3 class="card__heading">All-Rounder</h3>
+            </div>
+        </div>
+        
+    <div>
+</div>
+</div></section>
+<app-ranking-modal *ngIf="isModalOpen" (close)="closeModal()"></app-ranking-modal>
+

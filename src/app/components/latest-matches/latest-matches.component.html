@@ -1,0 +1,36 @@
+<div class="matchTypeHeading">
+    <h3 class="matchType">Matches</h3>
+    <a href="" class="view-more">More Matches</a>
+  </div>
+
+  <section class="card-list">
+    <!-- <p>{{totalLiveData}}</p> -->
+    <article *ngFor="let data of totalLiveData" class="card">
+      <!-- <p>{{totalLiveData['seriesId']}}</p> -->
+      <header class="card-header">
+        <p>{{data['matches'][0]['matchInfo']['matchDesc']}}</p>
+        <h2>{{data['seriesName']}}</h2>
+      </header>
+      <div class="dashboard-score">
+        <p>
+          <span>{{data['matches'][0]['matchInfo']['team1']['teamSName']}}</span>
+          <span *ngIf="data['matches'][0]['matchScore']"> 
+            <span *ngIf="data['matches'][0]['matchScore']['team1Score']['inngs1']"> 
+              <span *ngIf="data['matches'][0]['matchScore']['team1Score']['inngs1']"> 
+              {{data['matches'][0]['matchScore']['team1Score']['inngs1']['runs']}}/{{data['matches'][0]['matchScore']['team1Score']['inngs1']['wickets']}}
+            ({{data['matches'][0]['matchScore']['team1Score']['inngs1']['overs']}})</span></span></span></p>
+        <p>
+          <span>{{data['matches'][0]['matchInfo']['team2']['teamSName']}}</span>
+          <span *ngIf="data['matches'][0]['matchScore']"> 
+            <span *ngIf="data['matches'][0]['matchScore']['team2Score']"> 
+              <span *ngIf="data['matches'][0]['matchScore']['team2Score']['inngs1']"> 
+              {{data['matches'][0]['matchScore']['team2Score']['inngs1']['runs']}}/{{data['matches'][0]['matchScore']['team2Score']['inngs1']['wickets']}}
+            ({{data['matches'][0]['matchScore']['team2Score']['inngs1']['overs']}})</span></span></span></p>
+        <b>{{data['matches'][0]['matchInfo']['status']}}</b>
+      </div>
+      <div class="tags">
+        <a href="#">View</a>
+      </div>
+    </article>
+  
+  </section>

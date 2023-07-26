@@ -1,0 +1,19 @@
+<div class="matchTypeHeading">
+    <h3 class="matchType">Top Stories</h3>
+    <!-- <a href="" class="view-more">More Matches</a> -->
+  </div>
+
+  <section class="card-list">
+    <!-- <p>{{totalLiveData}}</p> -->
+    <article *ngFor="let data of topStories" class="card">
+      <!-- <p>{{totalLiveData['seriesId']}}</p> -->
+      <header class="card-header">
+        <p>{{data['context']}}</p>
+        <img src="{{data['image']}}" width="270px" height="120px">
+        <h2>{{data['hline']}}</h2>
+      </header>
+      <div class="tags"><a href="#">Read More...</a></div>
+    </article>
+    
+  
+  </section>

@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+body {
+    padding: 0rem 3rem;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'DM Mono', monospace;
+}

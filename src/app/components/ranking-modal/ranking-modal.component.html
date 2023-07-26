@@ -1,0 +1,56 @@
+<div class="modal-container">
+    <button style="float: right;margin-top: 5px;background: #212121;" (click)="onClose()">Close</button>
+    <h1>ICC {{getFormatType}} {{getPlayerType}} Ranking</h1>
+        <table class="container" *ngIf="getPlayerType == 'teams'">
+            <thead>
+                <tr>
+                    <th><h1>Rank</h1></th>
+                    <th><h1>Name</h1></th>
+                    <th><h1>Rating</h1></th>
+                    <th><h1>Matches</h1></th>
+                    <th><h1>Points</h1></th>            
+                    <th><h1>Image</h1></th>
+                    <th><h1>Last Updated</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let data of rankData'>
+                    <td>{{data['rank']}}</td>
+                    <td>{{data['name']}}</td>
+                    <td>{{data['rating']}}</td>
+                    <td>{{data['matches']}}</td>
+                    <td>{{data['points']}}</td>
+                    <td>{{data['imageId']}}</td>
+                    <td>{{data['lastUpdatedOn']}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="container" *ngIf="getPlayerType == 'batsmen' || getPlayerType == 'bowlers' || getPlayerType == 'allrounders'">
+            <thead>
+                <tr>
+                    <th><h1>Rank</h1></th>
+                    <th><h1>Name</h1></th>
+                    <th><h1>Country</h1></th>
+                    <th><h1>Rating</h1></th>
+                    <th><h1>Points</h1></th>
+                    <th *ngIf="getPlayerType == 'batsmen' || getPlayerType == 'bowlers'"><h1>Average</h1></th>
+                    <th><h1>Image</h1></th>
+                    <th><h1>Last Updated</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let data of rankData'>
+                    <td>{{data['rank']}}</td>
+                    <td>{{data['name']}}</td>
+                    <td>{{data['country']}}</td>
+                    <td>{{data['rating']}}</td>
+                    <td>{{data['points']}}</td>
+                    <td *ngIf="getPlayerType == 'batsmen' || getPlayerType == 'bowlers'">{{data['avg']}}</td>
+                    <td><img src="{{data['image']}}" style="width: 100px;height: 100px;"></td>
+                    <td>{{data['lastUpdatedOn']}}</td>
+                </tr>
+            </tbody>
+        </table>
+    
+  </div>
