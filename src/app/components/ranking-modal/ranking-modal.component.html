@@ -47,7 +47,7 @@
                     <td>{{data['rating']}}</td>
                     <td>{{data['points']}}</td>
                     <td *ngIf="getPlayerType == 'batsmen' || getPlayerType == 'bowlers'">{{data['avg']}}</td>
-                    <td><img src="{{data['image']}}" style="width: 100px;height: 100px;"></td>
+                    <td><img src="{{data['image']}}" alt="{{data['name']}}" style="width: 100px;height: 100px;"></td>
                     <td>{{data['lastUpdatedOn']}}</td>
                 </tr>
             </tbody>

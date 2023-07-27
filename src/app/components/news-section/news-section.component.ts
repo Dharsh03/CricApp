@@ -224,12 +224,12 @@ export class NewsSectionComponent {
   constructor(public matchListService: MatchListService) { }
   ngOnInit(): void {
 
-    //  this.matchListService.getTopStories().subscribe(response => {                          //Final
-      // this.response = response        
-      this.response = this.response[0]      
+     this.matchListService.getTopStories().subscribe(response => {                          //Final
+      this.response = response        
+      // this.response = this.response[0]      
       this.topStories = this.getTopStories()
       console.log(this.topStories)
-    // });                                                                                //Final
+    });                                                                                //Final
   }
 
   getTopStories(){
@@ -238,14 +238,14 @@ export class NewsSectionComponent {
       // console.log('AAAAAAAAAAAAAA')
       for (let i = 0; i < this.response['storyList'].length; i++) {
         if(this.response['storyList'][i]['story']){
-          // this.matchListService.getImageById(this.response['storyList'][i]['story']['coverImage']['id']).subscribe(
-          //   (image) => {
-          //     this.response['storyList'][i]['story']['image'] = this.getImageUrl(image);
-          //   },
-          //   (error) => {
-          //     console.error('Error fetching image:', error);
-          //   }
-          // );  
+          this.matchListService.getImageById(this.response['storyList'][i]['story']['coverImage']['id']).subscribe(
+            (image) => {
+              this.response['storyList'][i]['story']['image'] = this.getImageUrl(image);
+            },
+            (error) => {
+              console.error('Error fetching image:', error);
+            }
+          );  
           concatenatedArray = concatenatedArray.concat(this.response['storyList'][i]['story']);
         }
       }

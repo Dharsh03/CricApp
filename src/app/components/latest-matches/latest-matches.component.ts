@@ -735,12 +735,12 @@ export class LatestMatchesComponent {
   constructor(public matchListService: MatchListService) { }
   ngOnInit(): void {
 
-    //  this.matchListService.getLiveData().subscribe(response => {                          //Final
-      // this.response = response                                                         //Final
-      this.response = this.response[0]        
+     this.matchListService.getLiveData().subscribe(response => {                          //Final
+      this.response = response                                                         //Final
+      // this.response = this.response[0]        
       this.totalLiveData = this.getLiveMatches()
       console.log(this.totalLiveData)
-    // });                                                                                //Final
+    });                                                                                //Final
   }
 
   getLiveMatches(){
